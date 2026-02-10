@@ -63,5 +63,24 @@
             </div>
         </div>
     </main>
+        <div id="cookie-banner" class="cookie-banner">
+        <p>Ce site utilise des cookies pour améliorer votre expérience de cuisinier. 
+        <a href="#">En savoir plus</a></p>
+        <div class="banner-buttons">
+            <button onclick="acceptAll()">Tout accepter</button>
+            <button onclick="rejectAll()">Refuser</button>
+        </div>
+    </div>
+<div id="debug-dashboard" style="background: #222; color: #00ff00; padding: 15px; font-family: monospace; margin: 20px 5%; border-radius: 5px;">
+        <h3>🔍 Observateur de données (Temps réel)</h3>
+        <div id="log-container" style="height: 100px; overflow-y: auto; border-bottom: 1px solid #444; margin-bottom: 10px;"></div>
+        <div id="cookie-display">
+            <strong>Cookies stockés localement :</strong> <span id="current-cookies">Aucun</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>

@@ -116,3 +116,34 @@ main {
     font-size: 0.8rem;
     border-radius: 15px;
 }
+
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 5%;
+    right: 5%;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+#debug-dashboard {
+    background: #222;
+    color: #00ff00;
+    padding: 15px;
+    font-family: monospace;
+    margin: 20px 5%;
+    border-radius: 5px;
+}
+
+#log-container {
+    height: 100px;
+    overflow-y: auto;
+    border-bottom: 1px solid #444;
+    margin-bottom: 10px;
+}
