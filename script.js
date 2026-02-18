@@ -11,6 +11,9 @@ function addLog(message) {
 function acceptAll() {
     addLog("Action : Consentement total accordé.");
 
+    document.cookie = "consent_type=accepted; max-age=3600; path=/";
+    addLog("Action : Mise à jour du statut -> consent_type=accepted");
+
     // Capture de la configuration technique
     const screenRes = `${window.screen.width}x${window.screen.height}`;
     const browser = navigator.userAgent.split(') ')[1] || "Navigateur inconnu";
@@ -21,17 +24,22 @@ function acceptAll() {
     addLog(`Invisible : Collecte de la résolution (${screenRes}) et de la langue (${language}).`);
 
     // Simulation d'un ID de session basé sur le temps
-    const sessionId = "sess_" + Math.random().toString(36).substr(2, 9);
+    const sessionId = "sess_" + Math.random().toString(36);
     document.cookie = `session_id=${sessionId}; max-age=3600; path=/`;
     addLog(`Invisible : Identifiant de session généré : ${sessionId}`);
 
-    // Analyse des intérêts
-    const pageTitle = document.title;
-    document.cookie = `last_interest=${pageTitle}; max-age=3600; path=/`;
-    addLog(`Invisible : Profilage basé sur le contenu : l'utilisateur s'intéresse à "${pageTitle}".`);
 
     updateCookieDisplay();
-    document.getElementById('cookie-banner').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+
+//fonction de tracking d'interets
+function trackInterest(interestLabel) {
+    if (document.cookie.includes("consent_type=accepted")) { //pour vérifier que l'utilisateur a accepté les cookies
+        document.cookie = `last_interest=${interestLabel}; max-age=3600; path=/`;
+        addLog(`Invisible : L'utilisateur s'intéresse à "${interestLabel}".`);
+        updateCookieDisplay();
+    }
 }
 
 // Simulation du refus
@@ -43,9 +51,10 @@ function rejectAll() {
     addLog("Invisible : Cookie technique de refus créé (Nécessaire pour ne plus afficher la bannière)");
     
     updateCookieDisplay();
-    document.getElementById('cookie-banner').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
 }
 
+//update des logs
 function updateCookieDisplay() {
     const display = document.getElementById('current-cookies');
     if (display) display.innerText = document.cookie || "Aucun";
