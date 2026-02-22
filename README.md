@@ -1,4 +1,4 @@
-#Projet Marmithon
+# Projet Marmithon
 
 Toutes les images utilisés sur ce site ont été générés par l'IA Générative Gemini Pro.
 Une partie du code CSS a été amélioré par une l'IA Générative Gemini Pro dans un but esthétique.
