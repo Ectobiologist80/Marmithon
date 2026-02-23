@@ -7,7 +7,7 @@ Une partie du code CSS a été amélioré par une l'IA Générative Gemini Pro d
 Notre site Marmithon imite un site web de cuisine où l'on peut chercher des recettes. 
 L'objectif est de montrer coment des interactions banales déclenchent des mécanismes de collecte de données souvent invisible pour l'utilisateur.
 
-##Analyse de la menace
+## Analyse de la menace
 La menace étudiée est le suivi comportemental par cookies.
 * Le site utilise des cookies pour stocker des informations directement dans le navigateur de l'utilisateur.
 * Nous collectons le type de consentement, la configuration technique, un identifiant de session unique et les centres d'intérêt (dernière recette consultée ou recherche effectuée).
