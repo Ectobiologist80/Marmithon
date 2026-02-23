@@ -27,6 +27,8 @@ Dans celle-ci on retrouve les horaires où ont été effectués les différentes
 Initialement, le site récupère le type de consentement de l'utilisateur (ici, il est accepté), la taille de l'écran de l'appareil, la langue du navigateur et génère un identifiant pour la session.
 On peut ensuite cliquer sur les différents index du header (accueil, recettes, catégories, ect...) ainsi que sur le bouton chercher après avoir rentré du texte afin de récupérer le dernier interêt de l'utilisateur dans la console de logs.
 
+Enfin, il est possible de cliquer sur le bouton 'telecharger' afin de récuperer un fichier texte contenant l'ensemble des logs ainsi que les cookies précédemment mentionnés
+
 ### Scénario 2 : Refuser les cookies
 Lorsqu'on arrive sur le site et que la pop-up apparaît, cliquez cette fois-ci sur le bouton "Refuser".
 En consultant la console de logs en bas de page, vous verrez que l'action est bien enregistrée à l'horaire précise du clic, mais le comportement du site change radicalement.

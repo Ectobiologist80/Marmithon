@@ -60,6 +60,33 @@ function updateCookieDisplay() {
     if (display) display.innerText = document.cookie || "Aucun";
 }
 
+function downloadLogs() {
+    const logContainer = document.getElementById('log-container');
+    const cookies = document.cookie || " ";
+    const logText = logContainer.innerText;
+
+    const fileContent = `--- RAPPORT D'OBSERVATION MARMITHON ---
+Date : ${new Date().toLocaleString()}
+
+ACTIVITÉ DU SITE :
+${logText}
+
+DONNÉES COLLECTÉES :
+${cookies.split('; ').join('\n')}
+
+--- FIN DU RAPPORT ---`;
+
+    const blob = new Blob([fileContent], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    
+    link.href = url;
+    link.download = `logs.txt`;
+    link.click();
+    
+    URL.revokeObjectURL(url);
+}
+
 window.onload = () => {
     addLog("Page 'Marmithon' chargée : Prête pour l'observation.");
     updateCookieDisplay();
